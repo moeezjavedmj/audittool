@@ -43,15 +43,15 @@ const MODE_COPY: Record<
   active: {
     label: "Active User Check",
     eyebrow: "Finds department accounts missing from HR's active list",
-    file1Label: "HR Active Users File (CSV)",
-    file1Hint: "CSV export - any column named like Employee ID / Emp No, plus an optional Status column",
+    file1Label: "HR Active Users File",
+    file1Hint: ".xlsx or .csv - any column named like Employee ID / Emp No, plus an optional Status column",
     icon: <UserCheck className="h-5 w-5" />
   },
   resigned: {
     label: "Resignation Check",
     eyebrow: "Finds resigned employees still listed in the department",
-    file1Label: "HR Resigned Employees File (CSV)",
-    file1Hint: "CSV export - any column named like Employee ID / Emp No",
+    file1Label: "HR Resigned Employees File",
+    file1Hint: ".xlsx or .csv - any column named like Employee ID / Emp No",
     icon: <UserX className="h-5 w-5" />
   }
 };
@@ -148,7 +148,7 @@ function DropZone({
       <input
         ref={inputRef}
         type="file"
-        accept=".csv"
+        accept=".xlsx,.xlsm,.csv"
         className="hidden"
         onChange={(e) => handleFiles(e.target.files)}
       />
@@ -346,8 +346,8 @@ export default function Page() {
             </motion.div>
           </AnimatePresence>
           <DropZone
-            label="Department Roster File (CSV)"
-            hint="CSV export of the department/IT list to audit against HR"
+            label="Department Roster File"
+            hint=".xlsx or .csv - the department/IT export to audit against HR"
             file={file2}
             onFile={setFile2}
             accent="amber"
