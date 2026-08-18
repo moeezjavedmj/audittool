@@ -1,0 +1,55 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+body {
+  @apply bg-ink-950 text-slate-200;
+  background-image:
+    radial-gradient(circle at 15% 0%, rgba(63, 217, 219, 0.10), transparent 40%),
+    radial-gradient(circle at 85% 15%, rgba(245, 166, 35, 0.08), transparent 45%);
+  background-attachment: fixed;
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #28323F #0D1117;
+}
+*::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+*::-webkit-scrollbar-track {
+  background: #0D1117;
+}
+*::-webkit-scrollbar-thumb {
+  background: #28323F;
+  border-radius: 999px;
+}
+
+.panel {
+  @apply relative rounded-2xl border border-ink-600/70 bg-ink-900/70 backdrop-blur-sm;
+}
+
+.grid-backdrop {
+  background-image: linear-gradient(rgba(63,217,219,0.055) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(63,217,219,0.055) 1px, transparent 1px);
+  background-size: 34px 34px;
+  -webkit-mask-image: radial-gradient(ellipse at 50% 0%, black 45%, transparent 78%);
+  mask-image: radial-gradient(ellipse at 50% 0%, black 45%, transparent 78%);
+}
+
+.badge-dot {
+  box-shadow: 0 0 0 0 rgba(63, 217, 219, 0.5);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
