@@ -447,7 +447,7 @@ export default function Page() {
                       <Download className="h-3.5 w-3.5" /> Download full report
                     </button>
                   </div>
-                  <div className="max-h-80">
+                  <div className="max-h-80 overflow-auto">
                     <table className="w-full text-left text-xs">
                       <thead className="sticky top-0 bg-ink-800/95 font-mono uppercase tracking-wide text-slate-400">
                         <tr>
