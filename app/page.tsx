@@ -435,44 +435,44 @@ export default function Page() {
               )}
 
               {result.flagged > 0 && (
-                <div className="panel mt-6 overflow-hidden">
-                  <div className="flex items-center justify-between border-b border-ink-600/70 px-5 py-3">
-                    <p className="text-sm font-medium text-slate-300">
-                      Preview — first {result.preview.length} of {result.flagged}
-                    </p>
-                    <button
-                      onClick={() => downloadReport(result.reportBase64, result.reportFileName)}
-                      className="inline-flex items-center gap-1.5 rounded-lg border border-signal-amber/40 bg-signal-amber/10 px-3 py-1.5 text-xs font-semibold text-signal-amber transition-colors hover:bg-signal-amber/20"
-                    >
-                      <Download className="h-3.5 w-3.5" /> Download full report
-                    </button>
-                  </div>
-                  <div className="max-h-80 overflow-auto">
-                    <table className="w-full text-left text-xs">
-                      <thead className="sticky top-0 bg-ink-800/95 font-mono uppercase tracking-wide text-slate-400">
-                        <tr>
-                          {result.columns.map((c) => (
-                            <th key={c} className="whitespace-nowrap px-4 py-2 font-medium">
-                              {c}
-                            </th>
-                          ))}
-                        </tr>
-                      </thead>
-                      <tbody className="font-mono text-slate-300">
-                        {result.preview.map((row, i) => (
-                          <tr key={i} className="border-t border-ink-700/60 hover:bg-ink-800/50">
-                            {result.columns.map((c) => (
-                              <td key={c} className="whitespace-nowrap px-4 py-2">
-                                {row[c] ?? ""}
-                              </td>
-                            ))}
-                          </tr>
-                        ))}
-                      </tbody>
-                    </table>
-                  </div>
-                </div>
-              )}
+  <div className="panel mt-6 overflow-hidden">
+    <div className="flex items-center justify-between border-b border-ink-600/70 px-5 py-3">
+      <p className="text-sm font-medium text-slate-300">
+        Preview — first {result.preview.length} of {result.flagged}
+      </p>
+      <button
+        onClick={() => downloadReport(result.reportBase64, result.reportFileName)}
+        className="inline-flex items-center gap-1.5 rounded-lg border border-signal-amber/40 bg-signal-amber/10 px-3 py-1.5 text-xs font-semibold text-signal-amber transition-colors hover:bg-signal-amber/20"
+      >
+        <Download className="h-3.5 w-3.5" /> Download full report
+      </button>
+    </div>
+    <div className="max-h-80 overflow-auto">
+      <table className="w-full text-left text-xs">
+        <thead className="sticky top-0 bg-ink-800/95 font-mono uppercase tracking-wide text-slate-400">
+          <tr>
+            {result.columns.map((c) => (
+              <th key={c} className="whitespace-nowrap px-4 py-2 font-medium">
+                {c}
+              </th>
+            ))}
+          </tr>
+        </thead>
+        <tbody className="font-mono text-slate-300">
+          {result.preview.map((row, i) => (
+            <tr key={i} className="border-t border-ink-700/60 hover:bg-ink-800/50">
+              {result.columns.map((c) => (
+                <td key={c} className="whitespace-nowrap px-4 py-2">
+                  {row[c] ?? ""}
+                </td>
+              ))}
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  </div>
+)}
             </motion.div>
           )}
         </AnimatePresence>
