@@ -322,7 +322,7 @@ export async function runActiveMode(hrBuffer: Buffer, hrName: string, deptBuffer
     flagLabel: "Dept users missing from active list",
     nameColumn: nameCol,
     columns: dept.columns,
-    preview: missingRows.slice(0, 50),
+    preview: missingRows.slice(0, 10000),
     reportBuffer
   };
 }
@@ -355,7 +355,7 @@ export async function runResignedMode(resignedBuffer: Buffer, resignedName: stri
     flagLabel: "Resigned employees still listed in department",
     nameColumn: nameCol,
     columns: dept.columns,
-    preview: stillPresentRows.slice(0, 50),
+    preview: stillPresentRows.slice(0, 10000),
     reportBuffer
   };
 }
